@@ -1,0 +1,467 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+Hs Green Energy Engineering Solutions
+
+{% endblock title %}
+
+
+
+{% block content %}
+
+
+<div id="minimal-bootstrap-carousel" data-ride="carousel"
+  class="carousel slide carousel-fade shop-slider full_width ver_new_1_slider">
+  <!-- Wrapper for slides-->
+  <div role="listbox" class="carousel-inner">
+    <div style="background-image: url({% static 'images/slider/01.jpg' %});" class="item active">
+      <div class="carousel-caption">
+        <div class="thm-container">
+          <div class="box valign-top">
+            <div class="content text-left pull-right">
+              <h1 data-animation="animated fadeInLeft" class="bnrfnt40">Solar supplies and <br>Installation Technologies
+              </h1>
+              <p data-animation="animated fadeInRight" class="pln_he">HS Green Energy Engineering Solutions Ltd
+                supplies, designs and installs <br>high quality solar appliances for both domestic and industrial
+                use.<br>which range from; solar panels, charge controllers, batteries, solar water heaters, inverters
+              </p><a data-animation="animated fadeInUp" href="{% url 'projects' %}"
+                class="view-all hvr-bounce-to-right slide_learn_btn btn btn0">learn more</a><a
+                data-animation="animated fadeInUp" href="{%url 'services' %}"
+                class="view-all hvr-bounce-to-right slide_learn_btn btn">our sevices</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background-image: url({% static 'images/slider/02.jpg' %});" class="item">
+      <div class="carousel-caption">
+        <div class="thm-container">
+          <div class="box valign-top">
+            <div class="content text-left pull-right">
+              <h1 data-animation="animated fadeInLeft" class="bnrfnt40">Energy efficient <br>stoves for your daily
+                cooking</h1>
+              <p data-animation="animated fadeInRight" class="pln_he">constructs stoves and ovens for both charcoal and
+                firewood <br>These stoves use less amounts of charcoal and firewood and <br>they are smoke free.</p><a
+                data-animation="animated fadeInUp" href="{% url 'projects' %}"
+                class="view-all hvr-bounce-to-right slide_learn_btn btn btn0">learn more</a><a
+                data-animation="animated fadeInUp" href="{%url 'services' %}"
+                class="view-all hvr-bounce-to-right slide_learn_btn btn">our sevices</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background-image: url({% static 'images/slider/03.jpg' %});" class="item">
+      <div class="carousel-caption">
+        <div class="thm-container">
+          <div class="box valign-top">
+            <div class="content text-left pull-right">
+              <h1 data-animation="animated fadeInUp" class="bnrfnt40">We are the Leaders in Making <br>Biogas Systems
+              </h1>
+              <p data-animation="animated fadeInDown" class="pln_he">We designs and constructs biogas digesters for
+                biogas production <br>These systems provide an alternative clean and affordable cooking energy from
+                animal waste <br>and digests it in to biogas which is used for cooking.</p><a
+                data-animation="animated fadeInUp" href="{% url 'projects' %}"
+                class="view-all hvr-bounce-to-right slide_learn_btn btn btn0">learn more</a><a
+                data-animation="animated fadeInUp" href="{%url 'services' %}"
+                class="view-all hvr-bounce-to-right slide_learn_btn btn">our sevices</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Controls--><a href="#minimal-bootstrap-carousel" role="button" data-slide="prev" class="left carousel-control"><i
+      class="fa fa-angle-left"></i><span class="sr-only">Previous</span></a><a href="#minimal-bootstrap-carousel"
+    role="button" data-slide="next" class="right carousel-control"><i class="fa fa-angle-right"></i><span
+      class="sr-only">Next</span></a>
+</div>
+<!-- =========home banner end============-->
+<!-- We offer Different Services-->
+<section class="diff-offer-wrapper">
+  <div class="container">
+    <div class="row diff-offer">
+      <ul>
+        <li class="we-offer-cont">
+          <h2>We offer<span>Different Services</span></h2>
+        </li>
+        <li class="we-offer-cont2">
+          <p>HS GREEN ENERGY is committed to meeting or even exceeding customer requirements and enhancing customer
+            satisfaction through continuous improvement of its services and the quality management system.</p>
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+
+      {% if services %}
+      {% for service in services %}
+      {% if forloop.counter < 7 %}
+       <div class="col-sm-4 service-info">
+        <div class="item"><a href="{% url 'services' %}" class="post-image view image_hover"> <img
+              src="{{ service.image1.url }}" alt="" class="img-responsive zoom_img_effect"></a><a
+            href="{% url 'services' %}">
+            <h4>{{ service.title }}</h4>
+          </a>
+          <p>{{ service.description|truncatechars:100 }}</p>
+          <h6><a href="{% url 'services' %}">Read more</a></h6>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+  </div>
+
+  </div>
+</section>
+<!-- We offer Different Services-->
+<!-- Control in compliance-->
+<section class="container ind-common-pad2 clearfix">
+  <div class="quality-wrapper text-center">
+    <div class="vision tab-panel fade in">
+      <h2>Vision</h2>
+      <p>
+        To be the leading engineering company in east Africa and beyond
+      </p>
+     
+    </div>
+    <div class="values tab-panel fade hide">
+      <h2>Values</h2>
+      <ul>
+        <li>we pursue high quality services in all our activities.</li>
+          <li>we value time in all our activities, we ensure in and on time delivery in all our services.</li>
+          <li>we are genuinely concerned about customer satisfaction through consistent service provision.</li>
+          <li>we commit ourselves to the highest professional standards in all</li>
+      </ul>
+      
+    </div>
+    <div class="mission tab-panel fade hide">
+      <h2>Mission</h2>
+      <p>
+        To serve our clients through extension of reliable and high-quality energy services
+      </p>
+      
+    </div>
+    <div class="vision-wrapper text-center">
+      <ul>
+        <li><a id="vision" href="javascript:void(0)"><img src="images/services/ser-icon4.png" alt="">
+            <p>Vision</p>
+          </a></li>
+        <li><a id="values" href="javascript:void(0)"><img src="images/services/ser-icon5.png" alt="">
+            <p>Values</p>
+          </a></li>
+        <li><a id="mission" href="javascript:void(0)"><img src="images/services/ser-icon6.png" alt="">
+            <p>Mission</p>
+          </a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- Control in compliance-->
+<!-- Our Services natural resource-->
+<section class="fluid-service-area-home">
+  <div class="work-image-ser"><img src="{% static  'images/007.jpg' %}" alt=""></div>
+  <div class="service-promo">
+    <div class="service-t-content">
+      <div class="test-quote-sec"><img src="images/testimonial/quote-n.png" alt=""></div>
+      <div class="testimonial-t-sec">
+        <div class="testimonialn-slider">
+          <div class="item">
+            <div class="name-content clearfix">
+              <div class="tst-img"><img src="images/testimonial/test-img2.png" alt=""></div>
+              <div class="client-name">
+                <p>GREEN ENERGY POLICY<span>we believe the protection of the environment</span></p>
+                <ul>
+                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="content clearfix">
+              <p>we believe the protection of the environment is an important element of our corporate culture and that no process is so important that we cannot find a safe, healthy and environmentally sound way of carrying out our projects. When implementing projects in environmentally sensitive areas, such as critical dunes or wetlands, we work with local agencies to ensure strict enforcement of all applicable laws, ordinances, and directives. We routinely segregate construction waste for recycling when applicable on project job sites. HS GREEN ENERGY is committed to providing work places which are safe, healthy and friendly environments where safe working practices are insisted upon. We want everyone to encourage responsible behaviour and to contribute positively to seeking safer and more productive ways to work.</p>
+            </div>
+            <div class="sign text-right"><img src="images/testimonial/sign-n.png" alt=""></div>
+          </div>
+          <div class="item">
+            <div class="name-content clearfix">
+              <div class="tst-img"><img src="images/testimonial/test-img2.png" alt=""></div>
+              <div class="client-name">
+                <p>SAFETY POLICY<span>health and safety culture come from the top of the company</span></p>
+                <ul>
+                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="content clearfix">
+              <p>We know that the health and safety culture come from the top of the company.
+                In accordance with this policy, the directors and management endorse
+                the following action points:
+                The directors accept formally and publicly its collective role in providing
+                health and safety leadership for the company, The directors require all management functions within the company to be
+                carried out in a manner that reflects the health and safety intentions of this
+                policy statement, The directors accept their role in engaging the active participation of
+                workers in improving health & safety
+                IT IS OUR POLICY TO PROVIDE:
+                 A place of work, systems of work and plant that are safe 
+                 Appropriate information, instruction, training and supervision for all
+                employees.
+                 The allocation of sufficient resources to enable the health and safety policy
+                to function effectively.
+                 Regular consultation with employees, contractors, environmental health
+                officers and other relevant organisations.
+                 Regular assessment of operational performance, incident investigation
+                reports and audit to ensure continual improvement.
+                 Commitment to complying with statutory requirements, approved codes of
+                practice, recognised guidelines and other relevant industry standards.5
+                 Technical guidance and supporting information in order to assist
+                management in developing risk assessments and associated method
+                statements.</p>
+            </div>
+            <div class="sign text-right"><img src="images/testimonial/sign-n.png" alt=""></div>
+          </div>
+          <div class="item">
+            <div class="name-content clearfix">
+              <div class="tst-img"><img src="images/testimonial/test-img2.png" alt=""></div>
+              <div class="client-name">
+                <p>ENVIRONMENTAL POLICY<span>commitment to environment performance improvement</span></p>
+                <ul>
+                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                  <li><a href="#"><i class="fa fa-star"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="content clearfix">
+              <p>Environmental protection is our goal and to
+                obtain this goal, we will adhere to the following principles.
+                Compliance with legal requirements and voluntary commitments, sustainable compliance with legal and
+                NEMA (National Environment Management Authority) will be key consideration
+                in facility training, utilisation, incentive programs and in period performance
+                evaluation of all our employees.
+                Our company shall put provisions for proper training of all employees to comply
+                with applicable environmental laws, regulations and procedures to meet
+                environmental golas and tale individual and corporate responsibility fro
+                implementation of all programmes.
+                Sharing information with the community
+                We shall share information on our
+                commitment to environment performance improvement to both our internal and
+                external stakeholders. We will always involeve them in meeting our environmental
+                goals and in turn will always offer assistance to meet their environmental goals.
+                Continual improvement
+                Evaluation of our progress will be done consistently and reports will be reviewed and report annually. We will continually seek opprtunities
+                to improve adherence these principles and to improvement of our environmental
+                performance.
+                All levels of management are responsilbe for ensuring that
+                this policy is communicated and adhered to by all employees.</p>
+            </div>
+            <div class="sign text-right"><img src="images/testimonial/sign-n.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Our Services natural resource-->
+<!-- LOOKING AN ADEQUATE-->
+<section class="looking-wrapper clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <div class="indurial-solution-text2">
+          <h2>LOOKING CLEAN ENERGY SOLUTIONS</h2>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-right">
+        <div class="req-button text-right"><a href="{% url 'contact' %}" class="submit">Contact Us <i
+              class="fa fa-arrow-right"></i></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- LOOKING AN ADEQUATE-->
+<!-- Latest News-->
+<section class="latest-news1 sectpad">
+  <div class="container clearfix">
+    <div class="row">
+      <div class="col-lg-6 about-sec-content">
+        <div class="section_header2 common">
+          <h2>About Us</h2>
+        </div>
+        <h4>HS GREEN ENERGY ENGINEERING SOLUTIONS LTD (HS</h4>
+        <p>We are a privately owned company based in Kampala, Uganda but internationally focused. Established in 2013, now providing renewable and sustainable energy services worldwide
+          through NGOs, private companies and individuals, government projects in
+          Uganda</p>
+        <div class="row">
+          <div class="col-md-6">
+            <ul>
+              <li><i class="fa fa-arrow-circle-right"></i> Our Company Growth</li>
+              <li><i class="fa fa-arrow-circle-right"></i> 1000 Employed</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul>
+              <li><i class="fa fa-arrow-circle-right"></i> Our Company Growth</li>
+              <li><i class="fa fa-arrow-circle-right"></i> Customer Relationship</li>
+            </ul>
+          </div>
+        </div>
+        <div class="req-button about-but text-left"><a href="{% url 'about' %}" class="submit">About Us <i
+              class="fa fa-arrow-right"></i></a></div>
+      </div>
+      <div class="col-lg-6">
+        <div class="section-faq">
+          <div class="section_header2 common">
+            <h2>We are Specialized in</h2>
+          </div>
+          <div class="accordian-area accordian-area-pad">
+            <div id="accordion" role="tablist" aria-multiselectable="true" class="panel-group">
+              <div class="panel panel-default">
+                <div id="headingOne" role="tab" class="panel-heading">
+                  <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion"
+                      href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed"><span>Solar supplies, installation and maintenances</span><i class="fa fa-minus"></i><i
+                        class="fa fa-plus"></i></a></h4>
+                </div>
+                <div id="collapseOne" role="tabpanel" aria-labelledby="headingOne" class="panel-collapse collapse">
+                  <div class="panel-body faq-content">
+                    <p>supplies, designs and installs high quality solar appliances for both domestic and industrial use. These appliances range from solar panels, charge controllers,
+                      batteries, solar water heaters, inverters e.t.c. we have a specialised and experienced worker who are customer focused.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div id="headingTwo" role="tab" class="panel-heading">
+                  <h4 class="panel-title on"><a role="button" data-toggle="collapse" data-parent="#accordion"
+                      href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Power line, survey, extension and maintenance <i class="fa fa-minus"></i><i class="fa fa-plus"></i></a></h4>
+                </div>
+                <div id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo" class="panel-collapse collapse in">
+                  <div class="panel-body faq-content">
+                    <p>electrical materials and electrical installations such as domestic and commercial wiring, industrial
+                      installations, Electrical repairs and maintenance, Power line construction and maintenance of low voltage (240-415) V, medium voltage up to 33kv, transformer
+                      installation and repairs, Generator installation, motor (machine) installation and rewinding, maintenance and servicing.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div id="headingThree" role="tab" class="panel-heading">
+                  <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion"
+                      href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="collapsed">Biomass(energy efficient stoves, bio-gas, briquettes)<i class="fa fa-minus"></i><i class="fa fa-plus"></i></a></h4>
+                </div>
+                <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree" class="panel-collapse collapse">
+                  <div class="panel-body faq-content">
+                    <p>offers a set of environmentally friendly cooking energy solutions. We design and construct biogas
+                      digesters for biogas production which utilise animal waste and digests it in to biogas which is used for cooking</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Our Projects-->
+<section class="our-galler-htwo clearfix sectpad">
+  <div class="container clearfix">
+    <div class="section_header3 section_header2 common">
+      <h2>Our Projects</h2>
+    </div>
+  </div>
+  <div class="fullwidth-silder">
+    <div class="fullwidth-slider">
+
+
+ 
+  
+      {% if projects %}
+      {% for project in projects %}
+      <div class="item">
+        <div class="img-holder"><a href="{{ project.image1.url }}" class="tt-gallery-1 lightbox" ><span
+              class="tt-gallery-1-overlay"></span>
+            <div class="project-post-image image_hover"><img src="{{ project.image2.url }}" alt="" width="400" height="300"
+                class="zoom_img_effect"><span class="tt-gallery-1-caption"><span
+                  class="tt-gallery-1-caption-table"><span class="tt-gallery-1-caption-inner"><span
+                      class="tt-gallery-1-search"><i class="fa fa-search"></i></span></span></span></span></div>
+          </a></div>
+      </div>
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+<!-- Lattest news-->
+<!-- product solutions-->
+<section class="our-sol-wrapper clearfix">
+  <div class="container clearfix">
+    <p>We provide innovative <span>Energy solutions</span> for sustainable progress. Our professional team works to
+      increase productivity and cost effectiveness on the market.</p>
+  </div>
+</section>
+<!-- our clients & Get in touch-->
+<div class="container clearfix ind-common-pad">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 our-t-client">
+      <div class="section_header2 common">
+        <h2>our clients</h2>
+      </div>
+      <p>All our clean energy products such as briquettes, energy efficient charcoal and firewood stoves are tested and approved through a company quality control system</p>
+      <ul>
+        {% if clients %}
+        {% for client in clients %}
+        {% if forloop.counter < 7 %}
+        <li><img src="{{ client.image1.url }}" alt="cliint has no logo" class="img-responsive"> <br/> {{ client.name }}</li>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+      </ul>   
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <div class="section_header2 common">
+        <h2>Get in touch</h2>
+      </div>
+      <div class="get-t-touch">
+        <div class="get-t-touch-inner input_form service-request-form">
+          <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <div id="success">
+            <p>Your request sent successfully.</p>
+          </div>
+          <div id="error">
+            <p>Something is wrong. Message cant be sent!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+<!-- Indurial Solution-->
+<section class="indurial-t-solution indurial-solution indpad anim-5-all indurial-t-solution3">
+  <div class="container clearfix">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="indurial-solution-text text-center">
+          <h2>If You Need Any Energy Solution ... We Are Available For You</h2><span
+            class="contactus-button2 text-center"><a href="{% url 'contact' %}" class="submit">Contact Us </a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Indurial Solution-->
+
+
+
+{% endblock content %}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+
+Our Team
+
+{% endblock title %}
+
+
+{% block content %}
+
+
+
+    <!-- Inner Header-->
+    <section class="inner-banner2 clearfix">
+      <div class="container clearfix">
+        <h2>Our Team</h2>
+      </div>
+    </section>
+    <section class="breadcumb-wrapper">
+      <div class="container clearfix">
+        <ul class="breadcumb">
+          <li><a href="{% url 'team' %}">Home</a></li>
+          <li><span>Our Team</span></li>
+        </ul>
+      </div>
+    </section>
+    <!-- Single Service Page-->
+    <section class="core-projects sectpad">
+      <div class="container clearfix">
+        <h1>Our company experts</h1>
+        <p>We believe that our employees provide the most value to the company. HS GREEN ENERGY operates on the team concept and our many skilled and experienced staff and field team members have established a standard of excellence that is well recognised in the Energy industry. Our office staff include highly trained and experienced business, engineering and technical experts who provide oversight and support for each project. This team concept is the basis for our hands-on, pro-active approach which helps us to produce the most important results of every job to our client’s satisfaction.</p>
+      </div>
+    </section>
+    <!-- Team-->
+    <section class="team-pad team-area">
+      <div class="container clearfix">
+        <div class="our-team-page">
+          <div class="row">
+            {% if staff %}
+            {% for member in staff %}
+            <div class="col-sm-6 col-md-3 team">
+              <div class="team-images row m0"><img src="{{ member.image1.url }}" alt=""></div>
+              <ul class="nav social-icons">
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+              </ul>
+              <div class="team-content"><a href="#">
+                  <h4>{{ member.first_name }} {{ member.lasst_name }}</h4></a>
+                <p>{{ member.staff_role }}</p>
+                <p>{{ member.telephone }} </p>
+                <p>{{ member.email }}</p>
+              </div>
+            </div> 
+            {% endfor %}
+            {% endif %}        
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    <!-- Indurial Solution-->
+    <section class="indurial-t-solution indurial-solution indpad anim-5-all indurial-t-solution3">
+      <div class="container clearfix">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="indurial-solution-text text-center">
+              <h2>If You Need Any Energy Solution ... We Are Available For You</h2><span class="contactus-button2 text-center"><a href="{% url 'contact' %}" class="submit">Contact Us </a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Indurial Solution-->
+
+
+{% endblock content %}
